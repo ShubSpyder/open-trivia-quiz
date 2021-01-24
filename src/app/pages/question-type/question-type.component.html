@@ -1,0 +1,56 @@
+<section>
+  <nb-card>
+    <nb-card-header>
+      <h5>Quiz Question Preferences</h5>
+    </nb-card-header>
+    <nb-card-body>
+      <div class="form-container">
+        <nb-stepper #stepper [linear]="true">
+          <nb-step label="Number Of Questions" [stepControl]="numOfQuesForm">
+            <form [formGroup]="numOfQuesForm">
+              <input
+                type="number"
+                nbInput
+                fullWidth
+                status="primary"
+                formControlName="numOfQuestions"
+                placeholder="Enter Number Of Questions"
+              />
+            </form>
+            <button nbButton nbStepperNext>next</button>
+          </nb-step>
+
+          <nb-step label="Question category" [stepControl]="categoryForm">
+            <form [formGroup]="categoryForm">
+              <nb-select
+                placeholder="Select Question Category"
+                formControlName="category"
+              >
+                <nb-option
+                  *ngFor="let category of categories"
+                  [value]="category.value"
+                  >{{ category.name }}</nb-option
+                >
+              </nb-select>
+            </form>
+            <button nbButton nbStepperNext>next</button>
+          </nb-step>
+
+          <nb-step label="Difficulty Level" [stepControl]="difficultyForm">
+            <form [formGroup]="difficultyForm">
+              <nb-select
+                placeholder="Select difficulty"
+                formControlName="difficulty"
+              >
+                <nb-option *ngFor="let level of levels" [value]="level">{{
+                  level | titlecase
+                }}</nb-option>
+              </nb-select>
+            </form>
+            <button nbButton (click)="submit()">Submit</button>
+          </nb-step>
+        </nb-stepper>
+      </div>
+    </nb-card-body>
+  </nb-card>
+</section>

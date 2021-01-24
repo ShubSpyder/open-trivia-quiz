@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/@nebular/theme/styles/prebuilt/default.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -65,6 +66,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
+            "host": "opentrivia",
             "browserTarget": "open-trivia-quiz:build"
           },
           "configurations": {
@@ -91,6 +93,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/@nebular/theme/styles/prebuilt/default.css",
               "src/styles.scss"
             ],
             "scripts": []

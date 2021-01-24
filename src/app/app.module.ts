@@ -3,16 +3,30 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+
+import {
+  NbLayoutModule,
+  NbButtonModule,
+  NbThemeModule,
+  NbCardModule,
+} from '@nebular/theme';
+import { HeaderComponent } from './header/header.component';
+import { PagesModule } from './pages/pages.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent, HeaderComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NbLayoutModule,
+    NbButtonModule,
+    NbThemeModule.forRoot(),
+    NbCardModule,
+    PagesModule,
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
